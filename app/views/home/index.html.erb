@@ -1,0 +1,30 @@
+<% content_for :page_top do %>
+  <div class="home jumbotron">
+    <div class="container">
+      <h1 class="display-4">Resilience is the Key to Success</h1>
+      <blockquote class="blockquote lead">
+        <p class="mb-0">
+          The last three or four reps is what makes the muscle grow. This area of pain divides a champion from someone
+          who is not a champion.
+        </p>
+        <footer class="blockquote-footer">Arnold Schwarzenegger</footer>
+      </blockquote>
+      <hr class="my-4">
+      <% if user_signed_in? %>
+        <%= link_to('Add Activity', new_activity_path, class: 'btn btn-primary btn-lg')  %>
+        <%= link_to('My Activities', activities_path, class: 'btn btn-info btn-lg')  %>
+      <% else %>
+        <%= link_to('Get Started', new_user_registration_path, class: "btn btn-primary btn-lg") %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<!--<div class="row">-->
+<!--  <div class="col-md-6">-->
+<!--    Left content-->
+<!--  </div>-->
+<!--  <div class="col-md-6">-->
+<!--    Right content-->
+<!--  </div>-->
+<!--</div>-->

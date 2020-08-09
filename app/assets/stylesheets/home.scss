@@ -1,0 +1,33 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  background-color: #000;
+}
+
+.jumbotron {
+  padding: 7rem 4rem;
+  background-color: #000;
+  background-image: url(https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?cs=srgb&dl=woman-lifting-barbell-1552249.jpg&fm=jpg);
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  border-radius: 0 !important;
+
+  .lead {
+    font-size: 2.25rem;
+    font-weight: 100;
+    color: #fff;
+  }
+
+  .display-4 {
+    color: #007bff;
+  }
+
+  footer {
+    color: #89d7e4;
+  }
+}

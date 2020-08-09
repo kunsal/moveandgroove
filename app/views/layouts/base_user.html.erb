@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Railway</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'base_user', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta name="theme-color" content="#563d7c">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <%= link_to('Move & Groove', root_path, class: 'navbar-brand col-md-3 col-lg-2 mr-0 px-3 logo') %>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">-->
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: "nav-link") %>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to dashboard_path, class: 'nav-link ' + active_class(dashboard_path) do %>
+              <%= fa_icon('tachometer-alt') %> Dashboard
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to activities_path, class: 'nav-link ' + active_class(activities_path) do %>
+              <%= fa_icon('list-alt') %> My Activities
+            <% end %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to new_activity_path, class: 'nav-link ' + active_class(new_activity_path) do %>
+              <%= fa_icon('plus-square') %> Add New Activity
+            <% end %>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Settings</span>
+          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to  edit_user_registration_path, class: 'nav-link ' + active_class(edit_user_registration_path) do %>
+              <%= fa_icon('user-alt') %> My Profile
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"><%= yield :title %></h1>
+        <div class="buttons">
+          <%= yield :buttons %>
+        </div>
+      </div>
+
+      <% render 'layouts/notifications' %>
+      <%= yield %>
+    </main>
+  </div>
+</div>
+
+</body>
+</html>

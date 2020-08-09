@@ -1,0 +1,10 @@
+<% content_for :title do %>
+  Add New Activity
+<% end %>
+
+<% content_for :buttons do %>
+  <%= link_to 'Back', activities_path, class: 'btn btn-warning pull-right' %>
+<% end %>
+
+<%= render 'form', activity: @activity %>
+

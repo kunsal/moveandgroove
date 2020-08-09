@@ -1,0 +1,62 @@
+@import "bootstrap";
+
+html,
+body,
+.devise-wrapper {
+  height: 100%;
+}
+
+body {
+  background-image: url(asset_path('man-riding-bicycle.jpg'));
+  background-size: cover;
+  color: #fff;
+}
+
+.devise-wrapper {
+  .field {
+    margin-bottom: 10px;
+  }
+  br {
+    display: none;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 400px;
+  }
+
+  form .field input:not([type="checkbox"]) {
+    width: 400px;
+  }
+
+  .btn {
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #89d7e4;
+  }
+
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .logo {
+    font-weight: bold !important;
+    margin-bottom: 20px;
+    letter-spacing: 10px;
+  }
+
+  .alert {
+    width: 100%;
+  }
+}
+
+.shared-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+}

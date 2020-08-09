@@ -1,0 +1,28 @@
+<%= form_with(model: activity, local: true) do |form| %>
+  <% if activity.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% activity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class: 'control-label' %>
+    <%= form.select :name, activities_collection, {include_blank: true}, {class: 'form-control'} %>
+  </div>
+  <div class="form-group">
+    <%= form.label :activity_date, class: 'control-label' %>
+    <%= form.text_field :activity_date, {class: 'form-control',data:{ provide:'datepicker' }} %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :duration, class: 'control-label' %>
+    <%= form.text_field :duration, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

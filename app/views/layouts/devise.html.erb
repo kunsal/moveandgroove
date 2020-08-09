@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <title>Login & Signup</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'devise', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="devise-wrapper d-flex flex-column justify-content-center align-items-center">
+    <h3 class="logo"><%= link_to('Move & Groove', '/') %></h3>
+    <%= yield :title %>
+
+    <% if notice %>
+      <div class="alert alert-success"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-danger"><%= alert %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+  <%= javascript_pack_tag 'devise', 'data-turbolinks-track': 'reload' %>
+
+</body>
+</html>
